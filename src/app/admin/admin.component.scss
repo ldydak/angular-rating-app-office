@@ -1,0 +1,109 @@
+@import "../../general_scss/variables";
+
+.container {
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+
+}
+
+.single-wrapper {
+  width: 100%;
+
+  .edit-wrapper {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+
+    .sort {
+      width: 100%;
+
+      p {
+
+        @media (min-width: $md) {
+          min-width: 130px;
+        }
+      }
+
+
+    }
+  }
+
+  .edit {
+    margin: 20px 0;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .title-header {
+    font-weight: $bold;
+    padding: 10px 0;
+  }
+
+  .title {
+    padding: 10px;
+  }
+
+  input {
+    height: 40px;
+    width: calc(100% - 20px);
+    border-radius: $radius;
+    border: 1px solid $border;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 14px;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    &::placeholder {
+      color: $border;
+      font-weight: $regular;
+    }
+  }
+
+  .edit-info {
+    display: none;
+    background: $red-bg;
+    border-radius: $radius;
+    padding: 10px 20px;
+    margin: 20px 0;
+
+    p {
+      color: $red;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .actions-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    @media (min-width: $md) {
+      justify-content: flex-end;
+    }
+
+    button {
+      display: none;
+      margin: 0 10px;
+      min-width: 100px;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

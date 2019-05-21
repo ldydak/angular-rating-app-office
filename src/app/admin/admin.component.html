@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="section-header">
+  </div>
+
+  <div class="single-wrapper">
+
+    <div class="edit-wrapper">
+
+      <div class="sort">
+        <p>Wybierz badanie:</p>
+
+        <select (change)="selectQuestion($event.target.value)" name="" id="">
+          <option value="0">-- wybierz --</option>
+          <option value="1">{{ question1.title }}</option>
+          <option value="2">{{ question2.title }}</option>
+          <option value="3">{{ question3.title }}</option>
+          <option value="4">{{ question4.title }}</option>
+        </select>
+      </div>
+      <div class="edit">
+        <p class="title-header" *ngIf="visible === true">Tytuł: </p>
+        <p class="title">{{ selectedQuestion.title }}</p>
+        <input type="text" maxlength="18" placeholder="Tytuł nowego pytania" [class.active]="editable === true"
+          [(ngModel)]="inputTitle">
+
+        <p class="title-header" *ngIf="visible === true">Pytanie: </p>
+        <p class="title">{{ selectedQuestion.question }}</p>
+        <input type="text" maxlength="50" placeholder="Treść nowego pytania" [class.active]="editable === true"
+          [(ngModel)]="inputQuestion">
+      </div>
+      <div class="edit-info" [class.active]="alert === true">
+
+        <p>Nie możesz edytować badania które posiada już oceny!<br>
+          Jest to zabezepieczenie przed manipulowaniem wynikami.<br>Aby edytować badanie które posiada już oceny resetuj
+          jego wyniki, a następnie edytuj dowolnie treść.</p>
+      </div>
+
+    </div>
+    <div class="actions-wrapper" *ngIf="visible === true">
+      <button class="secondary" (click)="resetQuestion()" [class.active]="editable === false">Resetuj</button>
+      <button class="secondary" (click)="editQuestion()" [class.active]="editable === false">Edytuj</button>
+      <button (click)="editable = false" class="secondary" [class.active]="editable === true">Anuluj</button>
+      <button (click)="saveQuestion()" class="primary" [class.active]="editable === true">Zapisz</button>
+    </div>
+  </div>
+</div>

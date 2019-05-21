@@ -1,0 +1,89 @@
+@import "../../general_scss/reset";
+@import "../../general_scss/variables";
+
+
+.login-wrapper {
+  width: 100%;
+  max-width: 600px;
+  min-height: 350px;
+  background: $white;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  margin: 0 auto;
+  margin-top: 30%;
+  position: relative;
+  padding: 20px 20px 40px 20px;
+  box-sizing: border-box;
+
+  @media (min-width: $sm) {
+    margin-top: 15%;
+  }
+
+
+  .logo-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+
+
+    p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: $black;
+      text-align: center;
+      font-weight: $bold;
+      line-height: 20px;
+
+    }
+
+    span {
+      color: $gray;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    img {
+      text-align: center;
+      width: 125px;
+      height: auto;
+
+    }
+  }
+
+
+}
+
+.login-form {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $sm) {
+    margin: 0 auto;
+    width: 350px;
+  }
+
+  h1 {
+    margin: 10px 0;
+    text-align: center;
+    font-weight: $bold;
+    font-size: 26px;
+  }
+
+  button {
+    margin-top: 20px;
+
+    @media (min-width: $sm) {
+      isplay: flex;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+      max-width: 150px;
+    }
+  }
+}

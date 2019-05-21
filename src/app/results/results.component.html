@@ -1,0 +1,82 @@
+<app-header></app-header>
+<div class="container">
+
+
+
+  <div class="section-header">
+    <h1>Raport ocen</h1>
+    <div class="sort">
+      <p>Sortuj:</p>
+
+      <select (change)="sortQuestion($event.target.value)" name="" id="">
+        <option value="0">Całość badania</option>
+        <option value="1">{{ question1.title }}</option>
+        <option value="2">{{ question2.title }}</option>
+        <option value="3">{{ question3.title }}</option>
+        <option value="4">{{ question4.title }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="raport-wrapper">
+    <div class="votes-wrapper">
+
+      <div class="single-wrapper main-votes">
+        <h2>Ilość ocen</h2>
+        <p>{{ veryGood + good + average + bad + tragic}}</p>
+      </div>
+
+      <div class="single-wrapper">
+        <ul class="votes-sum">
+          <li>
+            <p>Bardzo dobrze</p><span class="first">{{ veryGood }}</span>
+          </li>
+          <li>
+            <p>Dobrze</p><span>{{ good }}</span>
+          </li>
+          <li>
+            <p>Średnio</p><span>{{ average }}</span>
+          </li>
+          <li>
+            <p>Źle</p><span>{{ bad }}</span>
+          </li>
+          <li>
+            <p>Tragicznie</p><span class="last">{{ tragic }}</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="chart-wrapper single-wrapper">
+      <div class="loader" *ngIf="veryGood === null">
+        <img src="./assets/img/loader.svg">
+      </div>
+      <div *ngIf="veryGood !== null">
+        <canvas #lineChart>{{ chart }}</canvas>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="section-header">
+    <h1>Przyznane oceny</h1>
+  </div>
+
+
+  <div class="ranks-wrapper">
+    <div class="single-wrapper">
+      <ul class="votes-sum">
+        <li
+          *ngFor="let rank of ranks | async | paginate: { itemsPerPage: 20, currentPage: page }; let time of ranks | async | paginate: { itemsPerPage: 20, currentPage: page }; let i = index">
+          <p>{{rank.rank}}</p><span>{{time.time | date: 'dd.MM.yyyy HH:mm:ss'}}</span>
+        </li>
+      </ul>
+      <pagination-controls class="pagination" (pageChange)="page = $event" previousLabel="Poprzednie"
+        nextLabel="Następne" responsive="true">
+      </pagination-controls>
+    </div>
+  </div>
+
+
+</div>

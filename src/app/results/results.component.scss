@@ -1,0 +1,98 @@
+@import "../../general_scss/variables";
+
+
+.container {
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.votes-sum {
+  li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $bg;
+    padding: 10px 0;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+
+  p {}
+
+  span {
+    &.first {
+      color: $success;
+    }
+
+    &.last {
+      color: $red;
+    }
+
+  }
+}
+
+.raport-wrapper {
+  @media (min-width: $md) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .votes-wrapper {
+    width: 100%;
+
+    @media (min-width: $md) {
+      width: 50%;
+      margin-right: 10px;
+    }
+  }
+
+  .chart-wrapper {
+    width: 100%;
+
+
+    @media (min-width: $md) {
+      width: 50%;
+      margin-left: 10px;
+    }
+
+    .loader {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+}
+
+.pagination /deep/ .ngx-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .current {
+    background: $brown;
+    border-radius: $radius;
+  }
+
+  a {
+    &:hover {
+      background: none;
+    }
+
+    &:after,
+    &:before {
+      content: '';
+    }
+
+  }
+
+  .disabled {
+
+    &:after,
+    &:before {
+      content: '';
+    }
+  }
+}

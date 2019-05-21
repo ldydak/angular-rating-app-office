@@ -1,0 +1,43 @@
+// Fonts
+
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&subset=latin-ext');
+$font: 'PT Serif';
+
+$regular: 400;
+$bold: 700;
+
+
+// BG
+
+$background: url('../src/assets/img/bg.jpg');
+$background-left: url('./assets/img/bg-left.jpg');
+$background-right: url('../src/assets/img/bg-right.jpg');
+$background-bottom: url('./assets/img/parsley.png');
+
+
+// Colors
+$bg: #f4f2ed;
+$white: #fff;
+$black: #2D2D2D;
+$brown: #5F3E1E;
+$light-brown: #F4F2ED;
+$gray: #d8d8d8;
+$border: #D4C7B9;
+$gray-btn: #F5F5F5;
+$orange: #ff9920;
+$success: #7ed321;
+
+//Alert
+$red: #C90A0A;
+$red-bg: #FFECEC;
+
+$radius: 8px;
+$shadow: 0 0 10px 0 rgba(0, 0, 0, 0.10);
+$shadow-header:0 0 4px 0 #A5856E;
+
+
+// Media Queries
+$xs: 400px;
+$sm: 600px;
+$md: 800px;
+$lg: 1200px;

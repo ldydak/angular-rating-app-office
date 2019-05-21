@@ -1,0 +1,201 @@
+@import "../../general_scss/reset";
+@import "../../general_scss/variables";
+
+header {
+  width: 100%;
+  background: $white;
+  height: 80px;
+  box-shadow: $shadow-header;
+
+  @media (min-width: $md) {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  width: 70px;
+
+  @media (min-width: $md) {
+    width: 450px;
+  }
+
+
+  img {
+    width: 70px;
+
+    @media (min-width: $md) {
+      width: 85px;
+    }
+  }
+
+  .logo-texts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    display: none;
+
+    @media (min-width: $md) {
+      margin-left: 20px;
+      width: 100%;
+      display: block;
+      font-weight: $bold;
+    }
+  }
+
+  span {
+    display: none;
+
+    @media (min-width: $md) {
+      margin: 5px 0 0 20px;
+      display: block;
+      font-weight: $regular;
+      color: $gray;
+      font-size: 12px;
+    }
+  }
+}
+
+.container {
+  display: flex;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+
+  .hamburger {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      display: block;
+      height: 2px;
+      width: 20px;
+      border-radius: 2px;
+      background: $black;
+      position: relative;
+      transition: all 200ms ease-in-out;
+
+
+      @media (min-width: $md) {
+        display: none;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        height: 2px;
+        width: 20px;
+        border-radius: 2px;
+        background: $black;
+        transition: all 200ms ease-in-out;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        height: 2px;
+        width: 20px;
+        border-radius: 2px;
+        background: $black;
+        transition: all 200ms ease-in-out;
+      }
+    }
+  }
+
+  .hamburger.active {
+
+    span {
+      background: $white;
+    }
+
+    span:before,
+    span:after {
+      transition: all 200ms ease-in-out;
+    }
+
+    span:before {
+      transform: translateY(5px) rotate(45deg);
+    }
+
+    span:after {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+  }
+
+  .menu {
+    display: none;
+
+    &.active {
+
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      top: 80px;
+      height: calc(100% - 80px);
+      width: 100%;
+      margin-left: 20px;
+      background-color: $gray-btn;
+
+      li {
+        padding: 20px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+      }
+
+      .secondary {
+        border: 0;
+        width: 150px;
+        background: $white;
+        font-weight: $bold;
+      }
+
+      @media (min-width: $md) {
+        display: none;
+      }
+    }
+
+
+
+    @media (min-width: $md) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        margin: 0 20px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .secondary {
+        border: 0;
+        width: 100px;
+      }
+    }
+
+
+  }
+}
