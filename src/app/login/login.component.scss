@@ -1,6 +1,9 @@
 @import "../../general_scss/reset";
 @import "../../general_scss/variables";
 
+.container {
+  margin: 0 auto;
+}
 
 .login-wrapper {
   width: 100%;
