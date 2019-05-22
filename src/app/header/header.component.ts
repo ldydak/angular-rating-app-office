@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from "@angular/fire/auth";
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -9,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   isActive = false;
 
-  constructor() { }
+  constructor(private fireAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
 
@@ -20,5 +23,8 @@ export class HeaderComponent implements OnInit {
 
   closeMenu() {
     this.isActive = this.isActive === false ? true : false;
+  }
+  logout() {
+    return this.fireAuth.auth.signOut().then(() => this.router.navigate(['/']))
   }
 }

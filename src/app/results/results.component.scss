@@ -69,11 +69,25 @@
 .pagination /deep/ .ngx-pagination {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
+  height: 30px;
+  font-size: 14px;
 
   .current {
-    background: $brown;
-    border-radius: $radius;
+    border: 1px solid $border;
+    background: none;
+    color: $brown;
+    border-radius: 50%;
+    height: 21px;
+    width: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .disabled {
+    color: $bg;
   }
 
   a {

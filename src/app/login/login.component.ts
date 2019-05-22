@@ -20,10 +20,14 @@ export class LoginComponent {
     private authService: AuthService
   ) { }
 
+  enter(event) {
+    if (event.keyCode === 13) {
+      this.login()
+    }
+  }
   login() {
     this.authService.login(this.credentials)
-      .then(() => this.router.navigate(['/results']))
+      .then(() => this.router.navigate(['/results/']))
       .catch(err => this.error = err);
   }
-
 }
